@@ -1,0 +1,23 @@
+using System;
+class test
+{
+    static void Main(string[] args)
+    {
+        int N = 50;
+        decimal[] feiBo = new decimal[N]; //定义数组
+        feiBo[0] = 1;
+        feiBo[1] = 1;
+        int x = 2;
+        while (x <= N - 1)
+        {
+            feiBo[x] = feiBo[x - 1] + feiBo[x - 2];
+            x++;
+        }
+        
+        foreach (decimal i in feiBo)
+        {
+            Console.WriteLine(i);
+        }
+        Console.ReadKey();
+    }
+}

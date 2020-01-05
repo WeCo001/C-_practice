@@ -1,0 +1,12 @@
+N = 50
+feiBo = []
+feiBo.append(1)
+feiBo.append(2)
+x = 2
+while x <= (N -1):
+    m = feiBo[x - 1] + feiBo[x - 2]
+    feiBo.append(m)
+    x += 1
+
+for i in feiBo:
+    print(i)

@@ -1,0 +1,35 @@
+using System;
+
+
+namespace CalculatorApplication
+{
+    class NumberManipulator
+    {
+        public int factorial(int num)
+        {
+            
+            int result;
+
+            if (num == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                result = factorial(num - 1) * num;
+                return result;
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            NumberManipulator n = new NumberManipulator();
+            
+            // 不要纠结在factorial里面获取用户输入，可以在运行Main函数的时候获取输入。
+            int m = Convert.ToInt32(Console.ReadLine());  
+
+            Console.WriteLine("n 的阶乘是: {0}", n.factorial(m));
+            Console.ReadLine();
+        }
+    }
+}

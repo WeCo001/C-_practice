@@ -1,0 +1,36 @@
+class MyArray
+{
+    static void Main(string[] args)
+    {
+        int[] list = {34, 72, 13, 44, 25, 30, 10 };
+        
+        Console.Write("Original Array: ");
+        foreach (int i in list)
+        {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+        
+        
+        Array.Reverse(list); //将数组逆转
+        Console.Write("Reversing Array: ");
+        foreach (int i in list)
+        {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine()
+        
+        
+        Array.Sort(list);
+        Console.Write("The sorting arrary: ");
+        foreach (int i in list)
+        {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+        
+        
+       Console.ReadKey();
+        
+    }
+}

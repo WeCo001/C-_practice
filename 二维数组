@@ -1,0 +1,31 @@
+int[ , ] a = new [3,4]{
+{0, 1, 2, 3},  
+{4, 5, 6, 7}, 
+{8, 9, 10, 11}
+} ;  // 可以看成3X4的矩阵
+
+int val = a[2,3]; //访问矩阵的3行4列
+
+
+
+
+
+
+class MyArray
+{
+    static void Main(string[] args)
+    {
+        int[ , ] = new int[5,2] {{1,2}, {2,3}, {3,4}, {4,5}, {5,6}};
+        
+        int i, j;
+        
+        for (i = 0; i < 5; i++)
+        {
+            for (j = 0; j < 2; j++)
+            {
+                Console.WriteLine("a[{0}, {1}] = {2}", i, j ,a[i,j]);
+            }
+        }
+        Console.ReadKey();
+    }
+}

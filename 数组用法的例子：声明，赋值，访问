@@ -1,0 +1,44 @@
+namespace ArraryApplication 
+{
+    class MyArrary
+    {
+        static void Main(string[] args)
+        {
+            int[] n = new int[10];  //创建一个10个整数的数组
+            int i,j;
+            
+            for ( i = 0; i < 10; i++ )
+            {
+                n[ i ] = i + 100;
+                Console.WriteLine("Element[{0}] = {1}", i, n[i]);
+            }
+            
+            
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+
+namespace ArraryApplication 
+{
+    class MyArrary
+    {
+        static void Main(string[] args)
+        {
+            int[] n = new int[10];  //创建一个10个整数的数组
+            int i,j;
+            
+            foreach ( int j in n )  //使用foreach来遍历 
+            {
+                int i = j - 100;
+                Console.WriteLine("Element[{0}] = {1}", i, j);
+            }
+            
+            
+            Console.ReadKey();
+        }
+    }
+}

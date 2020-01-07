@@ -1,0 +1,23 @@
+class ParamArray
+{
+    public int AddElements(params int[] arr)
+    {
+        int sum = 0;
+        foreach(int i in arr) // i表示数组arr里面的每一个数
+        {
+            sum += i;
+        }
+        return sum;
+    }
+}
+
+class TestClass
+{
+    static void Main(string[] args)
+    {
+        ParamArray app = new ParamArray();
+        int sum = app.Addelements(512, 720, 250, 567, 889);
+        Console.WriteLine("The sum is: {0}", sum);
+        Console.ReadKey();
+    }
+}

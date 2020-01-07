@@ -1,0 +1,10 @@
+double[] balance = new double[10];  //新建一个大小为10的数组
+
+balance[0] = 4500.0;  //给数组赋值
+
+double[] balance = {2340.0, 4523.60, 3421.0};  //在创建数组的同时给其赋值
+
+int[] marks = new int[5] {99, 98, 97, 96, 95};
+int[] marks = new int[] {99, 98, 97, 96, 95};
+
+int[] score = marks;   //赋值另一组数组

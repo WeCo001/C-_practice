@@ -1,0 +1,22 @@
+string str = "This is test";
+if (str.Contains("test"))
+{
+    Console.WriteLine("The sequence 'test' was found. ");
+}
+Console.ReadKey();
+
+
+// substring
+string str = "Last night I dream of San Pedro";
+Console.WriteLine(str);
+string substr = str.Substring(23); //截取从第23位开始一直到结尾
+Console.WriteLine(substr);
+Console.ReadKey();
+
+result:
+Last night I dream of San Pedro
+San Pedro
+
+
+//join方法
+sring str = String.Join("\n", starray);  //在字符串之间加入换行符，也就是字符串之间换行

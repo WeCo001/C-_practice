@@ -1,0 +1,58 @@
+class Line
+{
+    private double length;
+    public Line()
+    {
+        Console.WriteLine("对象已创建");
+    }
+    
+    public void setLength( double len)
+    {
+        length = len;
+    }
+    public double getLength()
+    {
+        return length;
+    }
+    
+    static void Main(string[] args)
+    {
+        line line = new line();
+        
+        line.setLength(6.0);
+        Console.WriteLine("The length of line : {0}", line.getLength()); // 注意是getLenght()
+        Console.ReadKey();
+    }
+}
+
+
+
+
+class Line
+{
+    private double length;
+    public Line(double len)
+    {
+        Console.WriteLine("对象已创建, length = {0}", len);
+        length = len;
+    }
+    
+    public void setLength( double len )
+    {
+        length = len;
+    }
+    public double getLength()
+    {
+        return length;
+    }
+    
+    static void Main(string[] args)
+    {
+        line line = new line(10.0);
+        Console.Write("The length of line is : {0}", line.getLength());
+        
+        line.setLength(6.0);
+        Console.Write("The Length of line is : {0}", line.getLength());
+        Console.ReadKey();
+    }
+}

@@ -1,0 +1,66 @@
+class Hero
+{
+    private string name;   //默认的是private
+    private int life = 50;
+    
+    public int Life     //属性，可以给private的life赋值。可以缺少其中一个，如果只有set过程，那么就是只写的；如果只有get过程，那么他就是只读的。
+    {
+        get
+        {
+            return life;
+        }
+        set
+        {
+            if (value < 0)
+                life = 0;
+            else 
+                if(value > 100)
+                life = 100;
+            else 
+                life = value;
+        }
+    }
+    
+    public string name
+    {
+        get
+        {
+            return name;
+        }
+        set
+        {
+            name = value;
+        }
+    }
+    
+    public int age { get; set; } //自实现属性
+    
+    public void AddLife()
+    {
+        life++;
+    }
+    
+    public Hero() // 构造方法，相当于初始化，调用类的时候，系统会自动调用，不能主动调用
+    {
+        life = 0;
+        name = " ";
+    }
+    
+    ~Hero()       // 析构方法，类销毁的时候使用
+    {
+        
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Hero herOne = new Hero();
+        heroOne.AddLife(); // 直接调用方法，但是构造函数不能这样直接调用
+        heroOne.Life = 90;  //属性   像这样调用属性（get set） 然后后面的数字 90 就是value。简单来讲，调用在左边，就会调用set过程.
+        int k = heroOne.Life; //如果这个属性出现在类等号右边，那么之前定义的值 50 就会被赋值给k。调用在右边，就会调用get过程.
+        
+        
+    }
+}

@@ -1,0 +1,16 @@
+private string id = "0000";
+public string ID
+{
+    get 
+    {
+        return id;
+    }
+    set
+    {
+        id = value;
+    }
+}
+
+
+//自实现
+public string ID (get; set; )

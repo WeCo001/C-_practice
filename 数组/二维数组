@@ -1,0 +1,21 @@
+const int M = 3;
+const int N = 4;
+int[,] a = new int[M, N]{{1,2,3,4}, {5,6,7,8},{9,1,2,3},{4,5,6,7}};
+int[,] b = new int[,]{{1,4,7,11}, {2,5,7,8}, {2,12,3,4}, {5,6,7,3}};
+int[,] c = new int[M, N];
+for (int i = 0; i < M; i++)
+{
+    for (int j = 0; j < N; j++)
+    {
+        c[i, j] = a[i, j] + b[i, j]; 
+    }
+}
+
+for (int i = 0; i<M; i++)
+{
+    for (int j = 0; j<N; j++)
+    {
+        Console.WriteLine("{0,4}", c[i,j]);
+        Console.WriteLine();
+    }
+}

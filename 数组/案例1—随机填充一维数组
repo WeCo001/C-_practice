@@ -1,0 +1,14 @@
+static void Main(string[] args)
+{
+    int [] a = new int[100];
+    Random r = new Random();  //调用Random类
+    for (i = 0; i<a.Length; i++)  //注意怎么弄的数组长度Length
+    {
+        a[i] = r.Next(1, 100); //next 是random类内的一个=函数，指的是下限1，上限100，上限不能取到，下限可以取到,
+    }
+    
+    foreach(int k in a)
+    {
+        Console.Write("{0} ", k);
+    }
+}

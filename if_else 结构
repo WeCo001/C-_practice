@@ -1,0 +1,14 @@
+double a, b, c;
+var s = Console.readLine();
+var ss = s.Split(' ');
+a = Convert.ToDouble(ss[0]);
+b = Convert.ToDouble(ss[1]);
+c = Convert.ToDouble(ss[2]);
+if (a + b > c && b + c > a && a + c > b)
+{
+    Console.WriteLine("Yes!");
+}
+else
+{
+    Console.WriteLine("No!");
+}

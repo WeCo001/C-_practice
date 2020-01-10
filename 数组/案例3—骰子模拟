@@ -1,0 +1,13 @@
+Random r = new Random();
+int[] dice = new int[11];
+for (int i = 0; i<3600; i++)
+{
+    int d1 = r.Next(1,7);
+    int d2 = r.Next(1,7);
+    dice[d1 + d2 -2] = dice[d1 + d2 - 2] + 1;   //这是统计这个数字的次数有多少，比如说骰到10的次数
+}
+
+for (int i = 0; i<11;i++)
+{
+    Console.WriteLine("和是{0}的次数是{1}",i+2, dice[i]);
+}

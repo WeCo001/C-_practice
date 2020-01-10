@@ -1,0 +1,71 @@
+class Program
+{
+    static void Main(string[] args)
+    {
+        Card card = new Card();
+        card.deal();
+        card.shuffle();
+        card.deal();
+        
+    }
+}
+
+struct CNode
+{
+    public char suit; //花色
+    public string face;  //面值
+}
+
+enum CardNum   //枚举
+{
+   CARDNUMBER = 52,  // 注意是逗号
+   SUITNUMBER = 4,
+   FACENUMBER = 13
+}
+
+class Card
+{
+    //定义扑克牌的数组
+    private CNode[] deck; 
+    public Card()    //构造函数
+    {
+        deck = new CNode[(int)CardNum.CARDNUMBER];   //枚举需要转换为整数后用，并且用（int）来转换
+        char[] suit = {(char)3, (char)4, (char)5, (char)6}; //Heart, Diamod, Club, Spade
+        string[] face = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+        for (int i =0; i<(int)CardNum.CARDNUMBER; i++)
+        {
+            deck[i].face = face[i % (int)CardNum.FACENUMBER];
+            deck[i].suit = suit[i / (int)CardNum.CARDNUMBER];
+        }
+        
+    }
+    public void deal()
+    {
+        Console.Write("========================");
+        Console.Write("52张牌的发牌次序");
+        Console.Write("========================");
+        Console.WriteLine();
+        Console.WriteLine("    甲    乙    丙    丁");
+        for (int i = 0; i<(int)CardNum.CARDNUMBER; i++)
+        {
+            Console.Write("第{0, 2}张牌: {1}{2}\t}", i+1, deck[i].suit, deck[i].face);
+            if ((i+1)%4 == 0)
+            {
+                Console.WriteLine();
+            }
+        }
+    }
+    public void shuffle()
+    {
+        int j;
+        CNode temp; //CNode 是一个struct，也就是一个值类型的变量
+        Random r = new Rondom();
+        for (int i = 0; i<(int)CardNum.CARDNUMBER; i++)
+        {
+            j = r.Next((int)CardNum.CARDNUMBER);
+            temp = deck[i];
+            deck[i] = deck[j];
+            deck[j] = temp;
+        }
+    }
+}

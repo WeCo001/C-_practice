@@ -1,0 +1,5 @@
+int[] arrary = new int[5]; //创建一个数组
+
+int[] arrary = new int[5]{1,2,3,4,5};
+int[] arrary = new int[]{1,2,3,4,5};
+int[] arrary = {1,2,3,4,5};

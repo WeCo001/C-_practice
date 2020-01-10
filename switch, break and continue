@@ -1,0 +1,36 @@
+var s = Console.ReadLine();
+int grade = Convert.ToInt32(s);
+int f;
+
+// switch语句
+switch(grade/10)
+{
+    case 10: //后面没有任何语句的情况下，可以省略break，注意是分号：
+    case 9:  //无论是10还是9，f都等于5
+        f = 5;
+        break;
+    case 8:
+        f = 4;
+        break;
+    case 7:
+        f = 3;
+        break;
+    default:  //其他case没匹配上，就执行default，default也是可有可无的
+        f = 1;
+        break;
+}
+
+
+// continue
+
+var n = Convert.ToInt32(Console.ReadLine());
+int k = 0;
+for (int i = n + 1; i < 100; i++)
+{
+    if (i % n == 0)
+    {
+        
+        k = 1;
+        break; //立即结束
+    }
+}

@@ -1,0 +1,30 @@
+int a;
+var s = Console.ReadLine();
+a = Convert.ToInt32(s);
+int sum = 0;
+int aNext = a;
+int n = 0;
+while(n < 7)           //while 循环
+{
+    sum = sum + aNext;
+    aNext = aNext * 10 + a;
+}
+Console.WriteLine("Sum = {0}", sum);
+
+
+
+//do while 循环
+do
+{
+    sum += aNext;
+    aNext = aNext * 10 + 2;
+    n++;
+} while(n < 7);
+
+// for循环
+
+for (int n = 0; n < 7; n++)
+{
+    sum = sum + aNext;
+    aNext = aNext * 10 + a;
+}

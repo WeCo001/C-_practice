@@ -1,0 +1,4 @@
+int [][] jagArray = new int[3][];
+jagArray[0] = new int[5];
+jagArray[1] = new int[4];
+jagArray[2] = new int[2];

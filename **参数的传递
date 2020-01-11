@@ -1,0 +1,30 @@
+//引用传递，形参与实参同享一快内存单元，不是拷贝传给形参，因此形参的改变会改变实参
+//值传递，形参和值参相互独立
+
+
+static void Main(string[] args)
+{
+    int a = 10;
+    int b = 99;
+    Swap(a, b);
+    Console.WriteLine("a= {0}, b = {1}", a, b); // 输出结果并没有进行交换
+    
+    SWap2(ref a, ref b);  //注意前面要加ref
+    Console.WriteLine("a= {0}, b = {1}", a, b);  //此时进行了交换
+}
+
+static void Swap(int a, int b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+    Console.WriteLine("a= {0}, b = {1}", a, b);　//这里进行了交换
+}
+
+static void Swap2(ref int a ; ref int b) //ref指的是按引用的方式进行传递
+{
+    int temp = a;
+    a = b;
+    b = temp;
+   
+}

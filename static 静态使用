@@ -1,0 +1,26 @@
+class Profram
+{
+    static void Main(string[] args) //static class里也只能调用static函数
+    {
+        Sample s = new Sample();
+        Sample s1 new Sample();
+        s.SampleMethod(); //不能直接调用静态函数
+        Sample.SampleMethod(); //通过类名加上方法名直接调用静态函数
+        Sample.count++;  //通过类名加上静态字段来给其赋值
+    }
+}
+
+class Sample
+{
+    public static int count = 0;
+    public int a = 0;
+    public static void SampleMethod()
+    {
+        Console.WriteLine("The static Method");
+    }
+    
+    public Sample()
+    {
+        count++;
+    }
+}

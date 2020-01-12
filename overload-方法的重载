@@ -1,0 +1,25 @@
+static void Main(string[] args)
+{
+    double area = TriangleArea(3, 4, 5); 
+}
+
+static double TriangleArea(double a , double b, double c)  
+{
+   double s = (a + b + c) / 2;
+   return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
+} 
+
+static double TriangleArea(double a , double b) 
+{
+    return(a * h)/2; 
+}
+
+static double TriangleArea(double a , double b, double theta) //会与第一种重复。——》Wrong
+{
+    return (a * b * Math.Sin(theta)) / 2;
+}
+
+static double TriangleArea(int a , int b, double theta) //这种可以区分，不过输入值变成（3.0， 4.0，5.0）这种比较区分的好点。——》Right
+{
+    return (a * b * Math.Sin(theta)) / 2;
+}

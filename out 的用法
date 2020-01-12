@@ -1,0 +1,39 @@
+static void Main(string[] args)
+{
+    int x1 = 3;
+    int x2 = 5;
+    int x3 = 0;// x3 x4 必须初始化
+    int x4 = 0;
+    Add(x1, x2, ref x3, ref x4);
+    Console.WriteLine("{0}, {1}"x3, x4);
+    
+}
+
+static void Add(int x, int y, ref int z, ref int m) //此时，重新分配一个x，和y的空间，把x1和x2的值给拷贝过来；
+                                         //但是在x3之前加了ref之后，就不会重新给x3分配一个新空间，直接引用前面的值，这就是引用传递
+{
+    z = x + y;
+    m = x - y;
+    
+}
+
+
+
+//使用out之后，x3，x4不用赋初值
+static void Main(string[] args)
+{
+    int x1 = 3;
+    int x2 = 5;
+    int x3 ;
+    int x4 ;
+    Add(x1, x2, out x3, out x4);
+    Console.WriteLine("{0}, {1}"x3, x4);
+    
+}
+
+static void Add(int x, int y, out int z, out int m) 
+{
+    z = x + y;
+    m = x - y;
+    
+}

@@ -1,0 +1,19 @@
+static void Main(string[] args)
+{
+    int a = 2;
+    double b = 45;
+    int c = 23;
+    char d = "Y";
+    Sam(a, b, c, d);
+    Sam(a, b, c);  //right
+    Sam(a, b, 1, d);
+    //命名函数
+    Sam(a, b, d:d); //前面的d指的是下面方法里面的d，后面的d指的是上面输入值里面的d，指的是把后面的d的值传给前面的d。
+    Sam(a, b, c:12);
+    
+}
+static void Sam(int a, double b, int c, char d = "R") //可选参数（有默认值的）必须在最后，如果a是可选参数，那么后面b c d也一定是可选参数
+{
+    a = a + 1;
+    b = a + c;
+}

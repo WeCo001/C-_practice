@@ -1,0 +1,15 @@
+static void Main(string[] args)
+{
+    Console.WriteLine(Average(1));
+    Console.WriteLine(Average(1,2,3,4));
+}
+static double Average(params int[] a) // params的用法
+{
+    int x = a.GetLength(0); //getlength(0) 指的是得到第一维数组的长度 0 ——》 1
+    double s = 0;
+    foreach (int k in a)
+    {
+        s += k;
+        return s/x; //注意这里
+    }
+}

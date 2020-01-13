@@ -1,0 +1,73 @@
+namespace ArraryApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Line line1 = new Line();
+            Console.WriteLine("Line1 Dis = {0}", line1.Distance());
+            Line line2 = new Line(1,1,3,3);
+            Console.WriteLine("line2 Dis = {0}", line2.Distance());
+            Point p1 = new Point(1, 1);
+            Point p2 = new Point(3, 3);
+            Line line3 = new Line(p1, p2);
+            Console.WriteLine("line3 Dis = {0}", line3.Distance());
+        }
+    }
+
+    class Point
+    {
+        private double x;     //更加简单的写法public double X {set; get;}
+        private double y;     // public double Y {set; get;}
+
+        public double X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+        public double Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+
+        public Point()
+        {
+            x = y = 0;        // X = Y = 0;
+        }
+
+        public Point(double a, double b)
+        {
+            x = a;
+            y = b;
+        }
+    }
+
+    class Line
+    {
+        public Point p1;
+        public Point p2;
+
+        public Line()
+        {
+            p1 = new Point();
+            p2 = new Point();
+        }
+
+        public Line(double m, double n, double m1, double n1)
+        {
+            p1 = new Point(m, n);
+            p2 = new Point(m1, n1);
+        }
+        public Line(Point P1, Point P2)
+        {
+            p1 = P1;
+            p2 = P2;
+        }
+
+        public double Distance()
+        {
+            return Math.Sqrt((p1.X - p2.X) * (p1.X - p2.X) + (p1.Y - p2.Y) * (p1.Y - p2.Y));
+        }
+    }
+}

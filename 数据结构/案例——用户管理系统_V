@@ -1,0 +1,77 @@
+class Program  //V层，view层
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("-----------------------");
+        Console.WriteLine("-----用户管理系统------");
+        Console.WriteLine("-----------------------");
+        
+        UserController uc = new UserController();
+        
+        while(true)
+        {
+            Console.WriteLine("请输入相应的指令：1.增加；2.修改；3.删除；4.查看");
+           
+           //接受用户输入的信息
+            string command = Console.ReadLine();
+        
+            switch(command)
+            {
+                case "1":
+                    Console.WriteLine("增加.");
+                    Console.WriteLine("请输入名字：")
+                    string name = Console.ReadLine();
+                    Console.WriteLine("请输入年龄：")
+                    int age = Console.ReadLine();
+                    Console.WriteLine("请输入居住地址：")
+                    string address = Console.ReadLine();
+                    
+                    uc.AddItem(new User(name, age, address));
+                    break;
+                case "2":
+                    Console.WriteLine("修改.");
+                    Console.WriteLine("请输入要修改的数据的名字");
+                    string name_3 = Console.readLine();
+                    Console.WriteLine("请输入要修改地址");
+                    string address_3 = Console.readLine();
+                    
+                    uc.Change(name_3, address4);
+                    break;
+                case "3":
+                    Console.WriteLine("删除.");
+                    Console.WriteLine("请输入删除的条件：1.姓名  2.地址");
+                    string com = Console.readLine();
+                    if (com == "1")
+                    {
+                        Console.WriteLine("请输入要删除的名字");
+                        string name_2 = Console.ReadLine();
+                        uc.RemoveByName(name_2);
+                    }
+                    else if (com == "2")
+                    {
+                        Console.WriteLine("请输入要删除的地址");
+                        string address_2 = Console.ReadLine();
+                        uc.RemoveByName(address_2);
+                    }
+                    else
+                    {
+                        Console.WriteLine("请输入指定的命令！");
+                    }
+                    break;
+                case "4":
+                    Console.WriteLine("查看.");
+                    uc.ShowAll();
+                    break;
+                default:
+                    Console.WriteLine("请输入正确的命令！")
+                    break;
+            }
+        }
+        
+        
+        
+        Console.ReadKey();
+        
+         
+    }
+}

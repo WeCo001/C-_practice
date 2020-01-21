@@ -1,0 +1,104 @@
+namespace _04
+{
+    class UserController
+    {
+        List<User> userlist = new List<User>();
+        
+        public void AddItem(User user)
+        {
+            userlist.Add(user);
+        }
+        
+        public void RemoveByName(string name)
+        {
+            for (int i = 0; i < userlist.Count; i++)
+            {
+                if (userlist[i].Name == name)
+                {
+                    userlist.Remove(userlist[i]);
+                }
+            }
+        }
+        
+        public void RemoveByAddress(string address)
+        {
+            for (int i = 0; i < userlist.Count; i++)
+            {
+                if (userlist[i].Address == address)
+                {
+                    userlist.Remove(userlist[i]);
+                }
+            }
+        }
+        
+        public void Change(string name, string address)
+        {
+            for (int i = 0; i < userlist.Count; i++)
+            {
+                if (userlist[i].Name == name)
+                {
+                    userlist[i].Address = address;
+                }
+                else 
+                {
+                    Console.WriteLine("无此数据！")
+                }
+            }
+        }
+        
+        
+        
+        
+        public void ShowAll()
+        {
+            if (userlist.Count == 0)
+            {
+                Console.WriteLine("Nothing!");
+            }
+            else
+            {
+                for (int i = 0; i< userlist.Count; i++)
+                {
+                    Console.WriteLine(userlist[i]);
+                }
+            }
+        }
+    }
+    
+    class User
+    {
+        private string name;
+        private int age;
+        private string address;
+        
+        public string Name
+        {
+            get {return name;}
+            set {name = value;}
+        }
+        
+         public int age
+        {
+            get {return age;}
+            set {age = value;}
+        }
+        
+         public string Address
+        {
+            get {return address;}
+            set {address = value;}
+        }
+        
+        public User(string name, int age, string address)
+        {
+            this.name = name;
+            this.age = age;
+            this.address = address;
+        }
+        
+        public override string ToString()
+        {
+            return string.Format("{0} : {1} : {2}", name, age, address);
+        }
+    }
+}

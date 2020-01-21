@@ -1,0 +1,10 @@
+List<int> num = new List<int>();
+
+num.Add(5); //添加一个数据
+num.Add(15);
+num.Add(25);
+num.Add(35);
+
+num.RemoveAt(2); //删除该位置的数
+
+num[2] = 55; //修改数据

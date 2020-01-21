@@ -1,0 +1,15 @@
+Dictionary<string, string> dic = new Dictionary<string, string>();
+
+dic.Add("baidu", "百度");
+dic.Add("qq", "腾讯");
+
+dic.Remove("qq");
+
+Console.WriteLine(dic.Count);
+
+dic["qq"] = "马化腾";
+
+foreach(var item in dic.Keys)
+{
+    Console.WriteLine("{0}:{1}",item, dic[item]);
+}

@@ -1,0 +1,59 @@
+class weapon
+{
+    private int id;
+    private string name;
+    private int attack;
+    
+    public int Id
+    {
+        get{ return id;}
+        set{id = value;}
+    }
+    
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+    
+    public int Attack
+    {
+        get {return name; }
+        set { name = value; }
+    }
+    
+    public Weapon(int id_2, string name_2, int attack_2)
+    {
+        id = id_2;
+        name = name_2;
+        attack = attack_2;
+    }
+    
+    public override string ToString() //重写了一下ToSting的方法
+    {
+        return string.Format("id:{0} - name:{1} - attack{2}", id, name, attack);
+    }
+}
+
+static void Main(string[] args)
+{
+    List<Weapon> weapons = new Lsit<Weapon>();
+    
+    Weapon item = new Weapon(1, "霸王枪", 100);
+    weapons.Add(item);
+    
+    weapons.Add(new Weapon(2, "二王弓", 200)); //通常改写成这样一行
+    weapons.Add(new Weapon(3, "三宴斧", 300));
+    weapons.Add(new Weapon(4, "四天刃", 400));
+    
+    weapons.RemoveAt(1); //通过索引
+    for (int i = 0; i<weapons.Count; i++) 
+    {
+         if (weapons[i].Name == "四天刃")
+         {
+             weapons.Remove(weapons[i]);   //通过名字删除
+             weapons[i].Attack = 9999;     //同理修改攻击力
+         }
+    }
+    
+}

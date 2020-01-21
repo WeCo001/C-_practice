@@ -1,0 +1,51 @@
+static void Main(string[] args)
+{
+    PhoneController pc = new PhoneController();
+    
+    pc.AddItem("A", "123");
+    pc.AddItem("B", "456");
+    
+    pc.ShowAll();
+    
+    pc.Update("B", "789");
+    pc.ShowAll;
+    
+    
+    pc.Delete("B");
+    pc.ShowAll();
+}
+
+
+
+
+
+
+
+class PhoneController
+{
+    // name and number
+    Dictionary<string, string> Phones = new Dictionary<string, string>;
+    
+    public void AddItem(string name, string number)
+    {
+        Phones.Add(name, number);
+    }
+    
+    public void ShowAll()
+    {
+        foreach(var item in phones)
+        {
+            Console.WriteLine("{0}:{1}", item, phones[item]);
+        }
+    }
+    
+    public void Delete(string name)
+    {
+        phones.Remove(name);
+    }
+    
+    public void Update(string name, string number)
+    {
+        phones[name] = number;
+    }
+}
